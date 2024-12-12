@@ -1,3 +1,5 @@
+// src/app/page.tsx
+
 'use client';
 
 import { FC, useEffect, useState } from 'react';
@@ -48,9 +50,9 @@ const ProductosPage: FC = () => {
       {/* Título "Catálogo" centrado */}
       <h2 className="text-4xl font-semibold mb-6 text-center text-white">Catálogo</h2>
 
-      {/* Filtro por categoría - Mejorado */}
+      {/* Filtro por categoría */}
       <div className="mb-6 flex justify-center">
-        <div className="flex items-center bg-gray-800 p-3 rounded-md shadow-lg">
+        <div className="flex items-center bg-gray-800 p-3 rounded-md shadow-lg w-full sm:w-auto">
           <label className="text-lg font-medium mr-4">Filtrar por categoría</label>
           <select
             className="p-2 border rounded-md bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -67,15 +69,15 @@ const ProductosPage: FC = () => {
         </div>
       </div>
 
-      {/* Productos */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      {/* Contenedor de productos */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {productosFiltrados.map((producto) => (
           <ProductoCard
             key={producto.id}
             model={producto.model}
             color={producto.color}
             img_url={producto.img_url}
-            category={getCategoryName(producto.category)} // Mostrar el nombre de la categoría
+            category={getCategoryName(producto.category)}
           />
         ))}
       </div>

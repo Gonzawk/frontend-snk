@@ -16,15 +16,15 @@ const ProductoCard: FC<ProductoCardProps> = ({ model, color, img_url, category }
       <img
         src={img_url}
         alt={model}
-        className="w-full h-64 object-contain"
+        className="w-full h-64 object-contain"  // Asegura que la imagen no se distorsione
       />
       <div className="p-4">
         {/* Nombre del producto */}
-        <h3 className="text-2xl font-semibold text-gray-800 mb-2">{model}</h3> {/* Cambio de color para el modelo */}
+        <h3 className="text-2xl font-semibold text-gray-800 mb-2">{model}</h3>
         {/* Color del producto */}
-        <p className="text-blue-600 text-sm">{color}</p> {/* Color para el color del producto */}
+        <p className="text-blue-600 text-sm">{color}</p>
         {/* Nombre de la categoría */}
-        <p className="text-gray-500 text-sm mt-2">{category}</p> {/* Color más suave para la categoría */}
+        <p className="text-gray-500 text-sm mt-2">{category}</p>
       </div>
     </div>
   );

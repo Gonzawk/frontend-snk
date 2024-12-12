@@ -1,15 +1,19 @@
+// src/app/layout.tsx
+
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Roboto } from "next/font/google"; // Importando fuentes válidas de Google
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+// Definiendo las fuentes
+const inter = Inter({
+  variable: "--font-inter",  // Definimos una variable CSS para la fuente Inter
+  subsets: ["latin"],        // Idioma de la fuente
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const roboto = Roboto({
+  variable: "--font-roboto",  // Definimos otra variable para la fuente Roboto
   subsets: ["latin"],
+  weight: ["400", "700"],     // Puedes agregar más pesos si es necesario
 });
 
 export const metadata: Metadata = {
@@ -24,9 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${inter.variable} ${roboto.variable} antialiased`}>
         {children}
       </body>
     </html>
