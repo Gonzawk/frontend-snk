@@ -4,5 +4,11 @@
       "src": "frontend/catalogo-productos/package.json",
       "use": "@vercel/next"
     }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/catalogo-productos/src/app/$1"
+    }
   ]
 }
